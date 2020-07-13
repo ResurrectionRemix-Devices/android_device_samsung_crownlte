@@ -26,7 +26,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 #Bootanimation
 TARGET_BOOT_ANIMATION_RES := 1440
 
-# Inherit some common Lineage stuff.
+# Inherit some common Bliss stuff.
 $(call inherit-product, vendor/bliss/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions
@@ -35,18 +35,20 @@ PRODUCT_NAME := bliss_crownlte
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-N960F
 PRODUCT_MANUFACTURER := samsung
-
-#BLissify
-export BLISS_MAINTAINER=garett_09
-export BLISS_BUILDTYPE=OFFICIAL
-
+PRODUCT_PDA_MODEL := N960F
+PRODUCT_PDA_MODEL_VERSION := XXS6ETG1
+PRODUCT_PDA_VERSION := $(PRODUCT_PDA_MODEL)$(PRODUCT_PDA_MODEL_VERSION)
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
 
-BUILD_FINGERPRINT := google/coral/coral:10/QQ3A.200605.001/6392402:user/release-keys
+#BLissify
+export BLISS_BUILDTYPE=OFFICIAL
+
+BUILD_FINGERPRINT := samsung/crownltexx/crownlte:10/QP1A.190711.020/$(PRODUCT_PDA_VERSION):user/release-keys
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-        PRODUCT_NAME=crownltexx \
-        PRIVATE_BUILD_DESC="crownltexx-user 10 QP1A.190711.020 N960FXXU5DTCA release-keys"
+    PRODUCT_NAME=crownltexx \
+    PRODUCT_DEVICE=crownlte \
+    PRIVATE_BUILD_DESC="crownltexx-user 10 QP1A.190711.020 $(PRODUCT_PDA_VERSION) release-keys"
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.bliss.maintainer=garett_09
+    ro.build.PDA=$(PRODUCT_PDA_VERSION)
