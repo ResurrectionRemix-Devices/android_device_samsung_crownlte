@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/bliss_crownlte.mk
+    $(LOCAL_DIR)/rr_crownlte.mk
 
 COMMON_LUNCH_CHOICES := \
-     bliss_crownlte-userdebug \
-     bliss_crownlte-eng \
-     bliss_crownlte-user
+     rr_crownlte-userdebug \
+     rr_crownlte-eng \
+     rr_crownlte-user
