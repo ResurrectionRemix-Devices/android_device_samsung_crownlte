@@ -48,6 +48,7 @@ PRODUCT_PACKAGES_DEBUG_ASAN := false
 
 #RR
 TARGET_FACE_UNLOCK_SUPPORTED := true
+export RR_BUILDTYPE := Official
 
 BUILD_FINGERPRINT := samsung/crownltexx/crownlte:10/QP1A.190711.020/$(PRODUCT_PDA_VERSION):user/release-keys
 
